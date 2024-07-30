@@ -1,0 +1,676 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Rock+Salt&family=Sniglet:wght@400;800&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "sniglet";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #333; /* gris */
+    overflow-x: hidden;
+}
+
+#hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffcc00, #333);
+    background-size: cover;
+}
+
+#hero-image {
+    width: 80%; /* Augmentez la taille à 80% */
+    max-width: 1000px; /* Limite maximale de 1000px */
+}
+
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    animation: fade-snow 20s infinite; /* Allonger la durée de l'animation pour un effet plus subtil */
+}
+
+@keyframes fade-snow {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.5; }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    opacity: 0.3; /* Réduire l'opacité pour moins d'effet de neige */
+    pointer-events: none;
+    animation: fall 10s linear infinite; /* Allonger la durée de la chute */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+#navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333; /* dark grey background */
+    padding: 0.25rem; /* Réduire encore plus la taille de la navbar */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Ombre subtile pour de la profondeur */
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-link {
+    color: #ffc107; /* Jaune vif pour les éléments actifs */
+    text-decoration: none;
+    padding: 12px 24px; /* Agrandir les boutons */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out; /* Transition douce pour les effets de survol */
+    font-size: 1.5rem; /* Augmenter la taille du texte */
+}
+
+.nav-link:hover, .nav-link:focus {
+    background-color: #ffc107; /* Couleur de surbrillance au survol */
+    color: #333; /* Texte foncé au survol pour le contraste */
+    transform: scale(1.1);
+}
+
+.social-media-links img {
+    width: 30px; /* Icônes plus grandes pour une meilleure visibilité */
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s; /* Transition douce pour la transformation au survol */
+}
+
+.social-media-links a:hover img {
+    transform: scale(1.2); /* Agrandissement des icônes au survol */
+}
+
+#links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#navbar ul {
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
+}
+
+#navbar #logo {
+    height: 4vw; /* Réduire la taille du logo */
+    margin-right: 1rem;
+    margin-left: 1rem; /* Réduire la marge gauche */
+    margin-top: 1rem;
+}
+
+#hero-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10rem 0; /* Increased padding to make the section taller */
+}
+
+#hero-info {
+    color: #24221c; /* yellow */
+    font-size: 2rem;
+    max-width: 800px;
+    margin-top: 2rem;
+}
+
+.marquee {
+    height: 5vh;
+    width: 100%;
+    font-size: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    padding-top: 1rem;
+    color: #f1c40f; /* yellow */
+    font-weight: 800;
+    background-color: #333; /* dark grey */
+    outline: 4px solid #f1c40f; /* yellow */
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marquee div {
+    display: block;
+    width: 200%;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 6s linear infinite;
+}
+
+.marquee span {
+    float: left;
+    width: 10%;
+}
+
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+#tokenomics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    background-color: #333; /* dark grey */
+    width: 100%;
+    padding: 2rem 0;
+}
+
+#tokenomics-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #333; /* dark grey */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#tokenomics img {
+    border: 8px solid #121618;
+    max-width: 700px;
+}
+
+#tokenomics-content .button {
+    display: inline-block;
+    padding: 1rem 2rem; /* Taille réduite */
+    background-color: #f1c40f; /* jaune */
+    color: #333; /* gris foncé */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem; /* Taille du texte réduite */
+    border-radius: 2rem;
+    margin-top: 1rem;
+    transition: transform 0.2s ease-in-out;
+    animation: jitter 0.5s infinite;
+}
+
+#tokenomics-content .button:hover {
+    background-color: #ff2020;
+    transform: scale(1.1);
+}
+
+@keyframes jitter {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+#partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+#partners h2 {
+    color: #f1c40f;
+    font-size: 2.8rem; /* Augmentez la taille de la police de 40% */
+}
+
+#partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: scale(1.4); /* Agrandissement de 40% */
+}
+
+.partner-logo {
+    max-width: 300px; /* Agrandissement des logos */
+}
+
+/* Dégradé de couleur pour la séparation */
+.color-gradient-separator {
+    width: 100%;
+    height: 50px; /* Hauteur de la séparation */
+    background: linear-gradient(90deg, rgba(241, 196, 15, 1) 0%, rgba(127, 140, 141, 1) 50%, rgba(241, 196, 15, 1) 100%);
+}
+
+#chart-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+#chart-section .tradingview-widget-container {
+    width: 100%;
+    max-width: 1200px; /* Augmente la largeur de la chart */
+}
+
+#chart-section .tradingview-widget-container__widget {
+    height: 800px; /* Augmente la hauteur de la chart */
+}
+
+#chart-section h2 {
+    color: #f1c40f;
+    font-size: 3rem; /* Agrandissement de la police */
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem; /* Taille réduite */
+    background-color: #f1c40f; /* jaune */
+    color: #333; /* gris foncé */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem; /* Taille du texte réduite */
+    border-radius: 2rem;
+    margin-top: 2rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #ff2020;
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    position: relative; /* Added to make sure the image is positioned relative to this container */
+    width: 100%;
+}
+
+#info h1 {
+    font-size: 6rem;
+    color: #f1c40f; /* yellow */
+    text-align: center;
+    width: 70%;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    position: relative; /* Added */
+    border: 10px solid #3d87db;
+    background-color: #333; /* dark grey */
+    border-radius: 3rem;
+    transform: translateX(-5vw);
+    padding-top: 2rem;
+}
+
+.number {
+    color: #533110; /* Change this to your desired color */
+    font-size: 2rem;
+}
+
+.card {
+    height: 15vh;
+    width: 80%;
+    border: 6px solid #1b1c24;
+    border-radius: 2rem;
+    margin-bottom: 2rem; /* Added margin between cards */
+    display: flex;
+    font-size: 1.5rem;
+    background-color: #f1c40f; /* yellow */
+    align-items: center;
+    justify-content: center;
+}
+
+.card:nth-child(odd) {
+    transform: translateX(-1rem); /* Move odd cards 10vw to the left */
+}
+
+.card:nth-child(even) {
+    transform: translateX(1rem); /* Move even cards 10vw to the right */
+}
+
+.attached-image {
+    position: absolute;
+    left: 100.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: auto;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+    .marquee {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .marquee {
+        font-size: 1vw;
+        height: 4vh;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    #hero-container {
+        flex-direction: column;
+    }
+
+    #info {
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    #buy #token-link {
+        font-size: 1rem;
+    }
+
+    #buy p {
+        font-size: 1.75rem;
+    }
+
+    .token-card h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .token-card h3 {
+        font-size: 1rem;
+    }
+
+    #tokenomics .button {
+        font-size: 1.5rem;
+    }
+
+    .attached-image {
+        width: 8rem;
+    }
+
+    .token-card {
+        width: 40vw;
+        height: 100%;
+    }
+
+    #tokenomics .button {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #info {
+        display: flex;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .card {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        font-size: 2.5rem;
+    }
+
+    #tokenomics h1 {
+        font-size: 3rem;
+    }
+
+    #tokenomics .button {
+        font-size: 1rem;
+    }
+
+    #title-container h1 {
+        font-size: 2rem;
+    }
+
+    #hero-container #hero {
+        margin-top: 2rem;
+        width: 40%;
+    }
+
+    .social-media-links img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    #navbar .button {
+        width: 30vw;
+    }
+
+    #navbar ul {
+        display: none;
+    }
+
+    #navbar #logo {
+        height: 10vw;
+    }
+
+    #footer #logo {
+        height: 10vw;
+    }
+
+    .token-card h2 {
+        font-size: 1rem;
+    }
+
+    .token-card h3 {
+        font-size: 0.75rem;
+    }
+
+    .attached-image {
+        display: none;
+    }
+
+    .info-container {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .card {
+        font-size: 1rem;
+    }
+
+    #tokenomics h1 {
+        font-size: 3rem;
+    }
+
+    #hero-container #hero {
+        width: 80%;
+    }
+
+    #title-container #title {
+        height: 20vw;
+    }
+
+    .marquee {
+        font-size: 0.5rem;
+    }
+
+    #tokenomics-content {
+        flex-direction: column;
+    }
+
+    #tokenomics h1 {
+        font-size: 2.5rem;
+    }
+
+    #tokenomics p {
+        font-size: 1rem;
+    }
+
+    .token-card {
+        width: 70vw;
+        height: 100%;
+    }
+
+    #tokenomics .button {
+        width: 70vw;
+    }
+
+    #mute-button {
+        display: none;
+    }
+}
+
+/* Ajout du style pour le fond derrière le texte */
+#tokenomics-content {
+    background-color: #444; /* Couleur de fond */
+    padding: 2rem; /* Espacement interne */
+    border-radius: 10px; /* Bords arrondis */
+    color: #fff; /* Couleur du texte */
+    text-align: center;
+}
+
+/* Animation de chute */
+@keyframes dropAnimation {
+    from {
+        transform: translateY(-100vh); /* Commence au-dessus de l'écran */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* Fini à la position normale */
+        opacity: 1;
+    }
+}
+
+.falling {
+    animation: dropAnimation 3s ease forwards; /* Ajustez le timing pour contrôler la vitesse */
+}
+
+/* Style pour les textes spécifiques à colorer en jaune */
+.yellow-text {
+    color: #ffc107; /* Jaune */
+}
+
+/* Styles supplémentaires pour agrandir les textes */
+.butters-coin {
+    font-size: 4rem; /* Taille agrandie pour "Butters Coin" */
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.choice-text {
+    font-size: 2.5rem; /* Taille agrandie pour "you made the right choice" */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.animated-character-container {
+    position: absolute;
+    left: -15%; /* Ajustez cette valeur pour déplacer le personnage à moitié hors de l'écran */
+    top: 5%; /* Ajustez cette valeur pour déplacer le personnage plus en haut */
+    width: 30%; /* Ajustez la taille de l'image pour qu'elle soit plus petite */
+    height: auto;
+    z-index: 1; /* Assurez-vous que l'image passe derrière la barre de navigation */
+    overflow: hidden; /* Assurez-vous que la partie coupée ne soit pas visible */
+    transform: rotate(25deg); /* Ajustez cette valeur pour mettre l'image en diagonale */
+}
+
+.half-character {
+    width: 200%; /* Augmentez la largeur pour compenser la rotation et montrer la moitié du personnage */
+    height: auto;
+    position: relative;
+    left: -50%; /* Ajustez cette valeur pour déplacer l'image vers la gauche */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
